@@ -1,0 +1,139 @@
+
+
+% Les packages utilise's ci-dessous le sont a` titre indicatif ;
+% vous pouvez les changer a` votre convenance.
+
+% Le type de document: article, rapport...
+\documentclass[a4paper]{report}
+
+% Mettre les diffe'rents packages et fonctions que l'on utilise
+%\usepackage[english]{babel}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphics,color}
+
+\renewcommand\thesection{\arabic{section}}
+
+% Commenter l'une de ces deux lignes
+%\RequirePackage[applemac]{inputenc}
+\RequirePackage[latin1]{inputenc}
+
+\begin{document}
+
+
+%----------- A   C O M P L E T E R   P A R   L E S   A U T E U R S ------------
+
+
+% Titre du rapport
+\def\TitreRapport{
+	Learning noun countability using minimally supervised (deep) learning
+}
+
+% Pre'nom et nom dde l'auteur
+\def\NomsAuteurs{
+    Cindy Aloui
+}
+
+% Date du rapport (dans la me^me langue que le titre)
+\def\DateRapport{
+    25 mai 2018
+}
+
+% Nom des encadrants
+\def\Encadrants{
+    \textbf{Encadrant(s)} \\
+	Carlos Ramisch et Alexis Nasr (co-encadrant)
+}
+% Nom du laboratoire
+\def\Labo{
+    LIF
+}
+
+
+
+% Re'sume' en franc,ais avec mots-cle's
+\def\ResumeFrancais{
+    R\'esum\'e en fran\c{c}ais obligatoire.
+    \\[2mm]
+    {\bf Mots-cl\'es : } mot-cl\'es  obligatoires.
+}
+
+
+\thispagestyle{empty}
+\begin{center}
+\baselineskip=1.3\normalbaselineskip
+{\bf\Large \TitreRapport}\\[8mm]
+{\bf\large \NomsAuteurs}\\[1mm]
+{\Labo}\\[4mm]
+\Encadrants\\[10mm]
+
+{\bf R\'esum\'e}
+\end{center}
+
+\ResumeFrancais\\[4mm]
+
+\newpage
+
+%-------------------- T E X T E   D U   R A P P O R T -------------------------
+
+\section{Introduction}
+
+A faire.
+
+\section{État de l'art}
+
+A faire
+
+\section{Description des données}
+
+    Comme dis précédemment, nous souhaitons résoudre ce problème avec un minimum de supervision. Nous avons donc décidé d'utiliser pour l?entraînement seulement une liste de 200 mots typiquement massif et une liste de 200 mots typiquement comptable et du corpus frWaC qui a était annoté par le TreeTagger qui nous donne pour chaque mot sa forme lemmatisé et sa partie de discours.
+    
+     Dans un premier temps nous avons séparé ces listes en un ensemble de mots pour l'entraînement et un autre pour le test (100 mots comptable et 100 mots massifs pour l'entraînement et la même chose pour le test).\\  
+	Dans un second temps, nous avons choisi aléatoirement 100 noms qui apparaissent dans le frWaC et ensuite choisi à nouveau aléatoirement pour chacun de ces mots 100 phrases où il apparaît. Nous avons donné cet ensemble de phrases à une linguiste qui pour chaque mot à annoté 50 des phrases extraite et à indiqué si ce nom dans ce contexte précis est plutôt massif, comptable ou ni l'un ni l'autre.\\
+\\
+\textbf{Exemple :} 
+\begin{center}
+\emph{C Le [[ balai ]] est tombé dans un trou de plusieurs mètres de profondeur .} 
+\end{center} Pour cette phrase le balai dans ce contexte a était annoté comptable.\\
+
+Ces 5000 phrases vont nous servir lors de l'évaluation de notre classifieur. 
+
+\section{Nom à trouver}
+
+ Pour réaliser la tâche de classification massif/comptable nous avons penser à trois approches différentes : 
+\begin{itemize}
+\item classifier le nom hors contexte en fonction des contextes dans lequel il apparaît (par exemple comme le nom table apparaît dans des contextes comptable, il serait classé en temps que nom comptable)
+\item classifier le contexte seul sans regarder le nom à classer
+\item classifier le contexte en utilisant aussi des informations lexicales du mot (éventuellement utilisé la classe du nom hors contexte)
+\end{itemize}
+
+Je vais par la suite entrer plus en détail sur les motivations de chacune de ces approches et expliquer les différentes implémentations.
+
+\subsection{Classifieur lexical}
+
+	Nous avons tout d'abord pensé à classifié les mot hors contexte et à appliquer la classe prédite à tout les contexte où ce mot apparaît car nous pensions que ça permettrait d'avoir une première baseline assez rapidement car la grande partie des mots sont soit très majoritairement massifs ou très majoritairement comptable, de plus c'est une information que nous pensons utile pour la suite. 
+
+
+\section{Consignes}
+
+Ins\'erer ici le texte du rapport dans le format et la structure que
+vous voulez.
+
+
+N'oubliez pas de mettre \`a la fin du rapport la bibliographie.
+
+\bigskip
+
+Une fois que votre rapport est pr\^et, produisez-en une version
+pdf. Relisez-la avec attention. V\'erifiez qu'il n'y a pas de
+probl\`emes d'accentuation.
+
+
+
+\bigskip
+
+Merci d'avoir bien voulu suivre ces instructions.
+
+\end{document}
+
