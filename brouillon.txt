@@ -1,8 +1,0 @@
-Dataset :
-    Comme dis précédemment, nous souhaitons résoudre ce problème avec un minimum de supervision. Nous avons donc decidé d'utiliser pour l'entrainement seulement une liste de 200 mots typiquement massif et une liste de 200 mots typiquement comptable et du corpus frWaC qui a était annoté par le TreeTagger qui nous donne pour chaque mot sa forme lemmatisé et sa partie de discours. Das un premier temps nous avons séparé ces listes en un ensemble de mots pour l'entraînement et un autre pour le test (100 mots comptable et 100 mots massifs pour l'entraînement et la même chose pour le test)
-Dans un second temps, nous avons choisi aléatoirement 100 noms qui apparaissent dans le frWaC et ensuite choisi à nouveau aléatoirement pour chacun de ces mots 100 phrases où il apparaît. Nous avons donné cet ensemble de phrases à une linguiste qui pour chaque mot à annoté 50 des phrases extraite et à indiqué si ce nom dans ce contexte précis est plutôt massif, comptable ou ni l'un ni l'autre.
-Exemple : 
-"C Le [[ balai ]] est tombé dans un trou de plusieurs mètres de profondeur ." 
-Pour cette phrase le mot à annoter est balai et il a était annoté comptable.
-
-Ces 5000 phrases vont nous servir lors de l'évaluation de notre classifieur. 

@@ -15,6 +15,7 @@
 
 \renewcommand\thesection{\arabic{section}}
 
+
 % Commenter l'une de ces deux lignes
 %\RequirePackage[applemac]{inputenc}
 \RequirePackage[latin1]{inputenc}
@@ -112,7 +113,15 @@ Je vais par la suite entrer plus en détail sur les motivations de chacune de ces
 
 \subsection{Classifieur lexical}
 
-	Nous avons tout d'abord pensé à classifié les mot hors contexte et à appliquer la classe prédite à tout les contexte où ce mot apparaît car nous pensions que ça permettrait d'avoir une première baseline assez rapidement car la grande partie des mots sont soit très majoritairement massifs ou très majoritairement comptable, de plus c'est une information que nous pensons utile pour la suite. 
+ Nous avons tout d'abord pensé à classifié les mots hors contexte et à appliquer la classe prédite à tout les contexte où ce mot apparaît. Nous pensions que ça permettrait d'avoir une première baseline assez rapidement, car la grande partie des mots sont soit très majoritairement massifs ou très majoritairement comptable, de plus c'est une information que nous pensons utile pour la suite en particulier pour la dernière approche. 
+ 	\subsubsection*{Word Embedding}
+  Nous avons tout d'abord pensé à utilisé des word embedding qui sont une représentation vectorielle des mots calculer à l'aide des contextes où les mots apparaissent. Cette représentation à la particularité que les mots apparaissant dans des contextes similaires possèdent des vecteurs proches, ce type de représentation semble donc utile pour notre tache de classification. Nous avons donc calculé les word embedding des mots de tout le frWaC, à l'aide de la bibliothèque python gensim avec comme paramètres :
+
+  \begin{itemize}
+\item une taille de 200, ce qui est une taille standard
+\item un fenêtre de 2, c'est à dire que pour l'on créer les word embeddings en prenant comme contexte deux mots avant et deux mots après
+\item skip-gram comme modèle pour apprendre les embeddings.
+\end{itemize}
 
 
 \section{Consignes}
