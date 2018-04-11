@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.3.6)  4 APR 2018 16:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.3.6)  9 APR 2018 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -279,21 +279,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
 [3] [4] (./modelememoire.aux) ) 
 Here is how much of TeX's memory you used:
  3250 strings out of 494999
  43524 string characters out of 6180229
- 109699 words of memory out of 5000000
+ 110699 words of memory out of 5000000
  6440 multiletter control sequences out of 15000+600000
  5504 words of font info for 20 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,6n,26p,548b,134s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,5n,26p,549b,134s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb>
-Output written on modelememoire.pdf (4 pages, 69185 bytes).
+Output written on modelememoire.pdf (4 pages, 72173 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  22 compressed objects within 1 object stream
