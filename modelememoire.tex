@@ -80,7 +80,10 @@
 
 \section{Introduction}
 
-A faire.
+La comptabilité des noms est importante dans plusieurs tâches de traitement automatique du langage, notamment pour la traduction automatique. En effet, certains langages tels que le Japonais n'ont pas de système d'article ni de marque du pluriel, dans ces cas-là, il est utile de connaître la comptabilité des mots pour déterminer les articles à utiliser par exemple en japonais : "gohan o tabemasu" se traduira "je mange du riz" alors que "pasuta o tabemasu" se traduira "je mange des pâtes". 
+
+La comptabilité peut aussi être utilisé pour levé l?ambiguïté de certain mots tel que gourmandise qui peut être comptable ou massif, il peut donc être utile de pouvoir déterminer la comptabilité d'un contexte, cela permet toujours en traduction automatique de connaître la traduction la plus pertinente, pas exemple savoir si gourmandise sera plutôt traduit greed ou delicacy en anglais. 
+Nous souhaitons donc pour associé un score de comptabilité et de massivité à un nom mais aussi à un contexte. Nous souhaitons aussi que notre système soit généralisable à d'autre classe sémantique telle que concret/abstrait ou animé/inanimé car cela permettrait de désambiguïsé plus de mots, pour cela il faudrait que notre système n'ai besoin que d'un minimum de données supervisé pour que l'ont puisse l'entraîner pour d'autre classes facilement.
 
 \section{État de l'art}
 
