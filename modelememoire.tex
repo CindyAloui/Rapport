@@ -80,26 +80,25 @@
 
 \section{Introduction}
 
-Dans de nombreuses langues dont le français un nom peut être comptable où massif. Les noms comptable peuvent être "comptés" comme leurs noms l'indique, ils peuvent être au singulier ou au pluriel, par exemple : un stylo, deux stylos. Les noms massifs eux ne peuvent être comptés, ils ont donc seulement une forme singulier comme eau ou sable.
+Dans de nombreuses langues dont le français un nom peut être comptable ou massif. Les noms comptables peuvent être "comptés" comme leur nom l'indique, ils peuvent être au singulier ou au pluriel, par exemple : un stylo, deux stylos. Les noms massifs eux ne peuvent être comptés, ils ont donc seulement une forme singulier comme eau ou sable.
 
 La comptabilité des noms est importante dans plusieurs tâches de traitement automatique du langage, notamment pour la traduction automatique. En effet, certains langages tels que le Japonais n'ont pas de système d'article ni de marque du pluriel, dans ces cas-là, il est utile de connaître la comptabilité des mots pour déterminer les articles à utiliser par exemple en japonais : "gohan o tabemasu" se traduira "je mange du riz" alors que "pasuta o tabemasu" se traduira "je mange des pâtes" alors que le seul mot changeant dans la phrase est \textit{gohan}(riz) qui devient \textit{pasuta}(pates). 
 
-La comptabilité peut aussi être utilisé pour levé l'ambiguïté de certain mots tel que gourmandise qui peut être comptable ou massif, il peut donc être utile de pouvoir déterminer la comptabilité d'un contexte, cela permet toujours en traduction automatique de connaître la traduction la plus pertinente, pas exemple savoir si gourmandise sera plutôt traduit \textit{greed} ou \textit{delicacy} en anglais. 
+La comptabilité peut aussi être utilisé pour lever l'ambiguïté de certain mots tel que gourmandise qui peut être comptable ou massif, il peut donc être utile de pouvoir déterminer la comptabilité d'un contexte, cela permet toujours en traduction automatique de connaître la traduction la plus pertinente, par exemple savoir si gourmandise sera plutôt traduit \textit{greed} ou \textit{delicacy} en anglais. 
 
 On peut aussi utiliser la comptabilité des mots pour détecter des erreurs dans l'utilisation d'article indéfini et de forme pluriel notamment chez les personnes n'ayant pas le français comme langue maternelle. Par exemple si un mot typiquement massif tel que sable se trouve dans un contexte comptable, il s'agit sûrement d'une erreur.
 
-Nous pensons que connaître seulement la classe lexicale d'un mot n'est pas suffisant, en effet, il y a le problème des mots ambigus et aussi parfois des mot typiquement massif ou comptable peuvent être employé dans des contextes ne correspondant pas à leurs classes lexical, par exemple : "Il s'agit d'une \textbf{eau} contenant beaucoup de minéraux", cependant la classe du "contexte" ne suffit pas non plus, car un grand nombre de contextes ne sont pas discriminants, on pense donc avoir besoin pour répondre à un plus grand nombre de problèmes de pouvoir classifier un certain mot dans un certain contexte. 
+Nous pensons que connaître seulement la classe d'un mot hors contexte n'est pas suffisant, en effet, il y a tout d'abord le problème des mots ambigus qui peuvent être massif ou comptable en fonction du contexte, on peut aussi rencontrer le cas de mots typiquement massif ou comptable qui sont employé dans des contextes ne correspondant pas à leurs classes, par exemple : "Il s'agit d'une \textbf{eau} contenant beaucoup de minéraux". La classe du "contexte" ne suffit pas non plus, car un grand nombre de contextes ne sont pas discriminants, on pense donc avoir besoin pour répondre à un plus grand nombre de problèmes de pouvoir classifier un mot hors contexte, un contexte seul et un mot dans un contexte. 
 
-Nous souhaitons aussi que notre système soit généralisable à d'autres classes sémantique telle que concret/abstrait ou animé/inanimé, car cela permettrait de désambiguïser plus de mots, pour cela, il faudrait que notre système soit très général et non pas spécialement adapté à la tâche de classification comptable/massif et n'ai besoin que d'un minimum de données supervisé pour que l'on puisse l'entraîner pour d'autres classes facilement.\\
+Nous souhaitons aussi que notre système soit généralisable à d'autres grandes classes sémantique telle que concret/abstrait ou animé/inanimé, car cela permettrait de désambiguïser un plus grand nombre de mots, pour cela, il faudrait que notre système soit général et non pas spécialement adapté à la tâche de classification comptable/massif et n'ai besoin que d'un minimum de données supervisé pour que l'on puisse l'entraîner pour d'autres classes facilement.\\
 \\
 \\
-\textbf{Expliquer le plan du mémoire}
 
 \section{État de l'art}
 
-Comme in existe un certain nombre d'applications, plusieurs chercheurs ont travaillé sur le problème de la comptabilité (pour l'anglais). Baldwin and Bond (2003a; 2003b) ont proposé une méthode pour apprendre la comptabilité des mots hors contexte à partir de données d'un corpus annoté. Lapatta et Keller (2005) et Pend et Araki (2005) ont proposé des modèles Web pour apprend la comptabilité. \textbf{à complété}
+Comme il existe un certain nombre d'applications, plusieurs chercheurs ont travaillé sur le problème de la comptabilité (pour l'anglais). Baldwin and Bond (2003a; 2003b) ont proposé une méthode pour apprendre la comptabilité des mots hors contexte à partir de données d'un corpus annoté. Lapatta et Keller (2005) et Pend et Araki (2005) ont proposé des modèles Web pour apprendre la comptabilité. 
 
-\`A notre connaissance il n'y a pas de travaux sur la comptabilité des mots français ni de modèle utilisant peut de données annotées et cherchant un modèle généralisable, en effet dans la majorité des travaux portant sur la comptabilité des mots utilisent des informations tel que la proportion d'apparition d'un mot au pluriel ainsi que la proportion d'apparition du mot précédé par un article indéfini qui sont des informations très adaptés à cette tache en particulier et ne permet donc pas de généraliser à d'autres classes sémantique. De plus la plupart des travaux tentent uniquement de définir la comptabilité des mots hors contexte hors, c'est pour ces raisons là que notre travail diffère fortement des autres travaux effectués sur ce sujet. 
+\`A notre connaissance il n'y a pas de travaux sur la comptabilité des mots français ni de modèle utilisant peu de données annotées et cherchant un modèle généralisable. Les autres travaux portant sur la comptabilité  utilisent des informations spécialisées pour définir la comptabilité d'un certain nom comme par exemple la proportion d'apparition de ce nom au pluriel ainsi que sa proportion d'apparition précédé par un article indéfini qui sont des informations très adaptés à cette tache en particulier et ne permettent donc pas de généraliser cette approche à d'autres classes sémantique. De plus ces travaux tentent uniquement de définir la comptabilité des mots hors contexte, c'est pour ces raisons là que notre travail diffère fortement des autres travaux effectués sur ce sujet. 
 
 \section{Description des données}
 
@@ -176,26 +175,6 @@ Cette approche donne les résultats suivants : \\
 \section{Pistes pour la suite}
 
 \section*{Bibliographie}
-
-\section{Consignes}
-
-Ins\'erer ici le texte du rapport dans le format et la structure que
-vous voulez.
-
-
-N'oubliez pas de mettre \`a la fin du rapport la bibliographie.
-
-\bigskip
-
-Une fois que votre rapport est pr\^et, produisez-en une version
-pdf. Relisez-la avec attention. V\'erifiez qu'il n'y a pas de
-probl\`emes d'accentuation.
-
-
-
-\bigskip
-
-Merci d'avoir bien voulu suivre ces instructions.
 
 \end{document}
 
