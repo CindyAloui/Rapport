@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{Baldwin-and-Bond-1}
+Timothy Baldwin and Francis Bond.
+\newblock Learning the countability of english nouns from corpus data.
+\newblock In {\em ACL '03 Proceedings of the 41st Annual Meeting on Association
+  for Computational Linguistics - Volume 1}, pages 463--470, 2003.
+
+\bibitem{Baldwin-and-Bond-2}
+Timothy Baldwin and Francis Bond.
+\newblock A plethora of methods for learning english countability.
+\newblock In {\em EMNLP '03 Proceedings of the 2003 conference on Empirical
+  methods in natural language processing}, pages 73--80, 2003.
+
+\bibitem{Lapata-And-Keller-1}
+Mirella Lapata and Frank Keller.
+\newblock Web-based models for natural language processing.
+\newblock {\em ACM Transactions on Speech and Language Processing (TSLP)},
+  Volume 2(Article No.1), Fevrier 2005.
+
+\bibitem{peng2005detecting}
+Jing Peng and Kenji Araki.
+\newblock Detecting the countability of english compound nouns using web-based
+  models.
+\newblock In {\em Companion Volume to the Proceedings of Conference including
+  Posters/Demos and tutorial abstracts}, 2005.
+
+\end{thebibliography}
